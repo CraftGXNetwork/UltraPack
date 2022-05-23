@@ -5,6 +5,11 @@
 
 		[Java.Advanced.ExplicitGC]
 			# 
+			# Whether or not to run explicit GC when the player is sleeping in a bed.
+			# 
+			# Note: enableExplicitGC must be true for this to have any effect.
+			explicitGCOnSleep = true
+			# 
 			# Enable this to allow itlt to explicitly request a garbage collection whenever the user
 			# pauses the game or opens an screen with an opaque background while keeping auto GC.
 			# (e.g. the Resource Packs screen)
@@ -24,19 +29,6 @@
 			# default as it may actually hurt performance if Xms and Xmx aren't the same!
 			enableExplicitGC = false
 			# 
-			# Whether or not to run explicit GC when the player pauses the game.
-			# 
-			# Mainly useful to turn off if you usually only have the game paused for a tiny amount 
-			# of time (i.e. less than ~2s).
-			# 
-			# Note: enableExplicitGC must be true for this to have any effect.
-			explicitGCOnPause = true
-			# 
-			# Whether or not to run explicit GC when the player is sleeping in a bed.
-			# 
-			# Note: enableExplicitGC must be true for this to have any effect.
-			explicitGCOnSleep = true
-			# 
 			# Whether or not to run explicit GC when navigating one of the following opaque
 			# background screens: Singleplayer world selection, Multiplayer server selection,
 			# Resource Pack selection, Language selection, Chat options, controls options,
@@ -46,66 +38,18 @@
 			# 
 			# Note: enableExplicitGC must be true for this to have any effect.
 			explicitGCOnMenu = true
-
-	[Java.Arch]
-
-		[Java.Arch.Guide]
 			# 
-			# Enable this if you want to be able to change the link your users are sent to when
-			# they ask for instructions on how to get 64bit Java.
+			# Whether or not to run explicit GC when the player pauses the game.
 			# 
-			# This is mainly useful for when you're using an unsupported version of this mod and
-			# the default guide's outdated or you're using your own custom launcher.
-			enableCustom64bitJavaGuide = false
+			# Mainly useful to turn off if you usually only have the game paused for a tiny amount 
+			# of time (i.e. less than ~2s).
 			# 
-			# The URL of the guide you want users to visit when they want 64bit Java.
-			# 
-			# Note: enableCustom64bitJavaGuide must be enabled for this to take effect.
-			# Note: The URL must start with "https://" for security reasons.
-			# Note: itlt supports the following *optional* string insertions, useful for being
-			# able to show an exact guide: %launcher, %reason, %type, %desire, %subject.
-			custom64bitJavaGuideURL = "https://zlepper.github.io/itlt/guide?launcher=%launcher&reason=%reason&type=%type&desire=%desire&subject=%subject&debug=false"
-
-		[Java.Arch.Requirement]
-			# 
-			# Whether or not to require 64bit Java to be able to launch the modpack.
-			# 
-			# If this is enabled and someone tries to launch the modpack with 32bit Java, they'll
-			# get a message telling them how to upgrade and the modpack will close until they
-			# relaunch it with 64bit Java.
-			# 
-			# Note: Enabling this overrides enable64bitWarning.
-			enable64bitRequirement = true
-
-		[Java.Arch.Warning]
-			# 
-			# Whether or not to warn when someone tries to launch the modpack with 32bit Java.
-			# 
-			# If this is enabled and someone tries to launch the modpack with 32bit Java, they'll
-			# get a message asking them to upgrade with instructions and the option to ask later
-			# and continue launching the modpack.
-			enable64bitWarning = true
+			# Note: enableExplicitGC must be true for this to have any effect.
+			explicitGCOnPause = true
 
 	[Java.Version]
 
 		[Java.Version.Min]
-
-			[Java.Version.Min.Guide]
-				# 
-				# Enable this if you want to be able to change the link your users are sent to when
-				# they ask for instructions on how to upgrade Java.
-				# 
-				# This is mainly useful for when you're using an unsupported version of this mod
-				# and the default guide is outdated or you're using your own custom launcher.
-				enableCustomJavaUpgradeGuide = false
-				# 
-				# The URL of the guide you want users to visit when they want to upgrade Java.
-				# 
-				# Note: enableCustomJavaUpgradeGuide must be enabled for this to take effect.
-				# Note: The URL must start with "https://" for security reasons.
-				# Note: itlt supports the following *optional* string insertions, useful for being
-				# able to show an exact guide: %launcher, %reason, %type, %desire, %subject.
-				customJavaUpgradeGuideURL = "https://zlepper.github.io/itlt/guide?launcher=%launcher&reason=%reason&type=%type&desire=%desire&subject=%subject&debug=false"
 
 			[Java.Version.Min.Requirement]
 				# 
@@ -151,7 +95,72 @@
 				# are unable to change the version of Java used to launch the game.
 				ignoreMinJavaVerWarningWhenVerForced = true
 
+			[Java.Version.Min.Guide]
+				# 
+				# The URL of the guide you want users to visit when they want to upgrade Java.
+				# 
+				# Note: enableCustomJavaUpgradeGuide must be enabled for this to take effect.
+				# Note: The URL must start with "https://" for security reasons.
+				# Note: itlt supports the following *optional* string insertions, useful for being
+				# able to show an exact guide: %launcher, %reason, %type, %desire, %subject.
+				customJavaUpgradeGuideURL = "https://zlepper.github.io/itlt/guide?launcher=%launcher&reason=%reason&type=%type&desire=%desire&subject=%subject&debug=false"
+				# 
+				# Enable this if you want to be able to change the link your users are sent to when
+				# they ask for instructions on how to upgrade Java.
+				# 
+				# This is mainly useful for when you're using an unsupported version of this mod
+				# and the default guide is outdated or you're using your own custom launcher.
+				enableCustomJavaUpgradeGuide = false
+
 		[Java.Version.Max]
+
+			[Java.Version.Max.Requirement]
+				# 
+				# The maximum version of Java needed to be able to launch the modpack.
+				# 
+				# Note: itlt handles Java version naming scheme differences for you, meaning you can
+				# put "7" here and itlt will correctly check against "Java 1.7" internally,
+				# while values such as "15" will check against "Java 15" internally.
+				#Range: 6 ~ 127
+				requiredMaxJavaVerion = 15
+				# 
+				# Whether or not to require a certain version of Java to be able to launch the modpack.
+				# 
+				# If someone tries to launch the modpack with a version of Java newer than what's
+				# specified in requiredMaxJavaVersion, they'll get a message telling them how to
+				# downgrade and that the modpack will close until they relaunch it with older Java.
+				# 
+				# Note: If your version of Forge doesn't support the max version of Java you're
+				# trying to prevent, this mod won't be able to kick into action and show the message
+				# to users.
+				# 
+				# Note: This is *separate* from enableMaxJavaVerWarning - you can have a separate 
+				# version requirement and warning.
+				enableMaxJavaVerRequirement = false
+
+			[Java.Version.Max.Warning]
+				# 
+				# The minimum recommended version of Java needed to skip the warning message when
+				# launching the modpack.
+				#Range: 6 ~ 127
+				warnMaxJavaVersion = 15
+				# 
+				# Some launchers (such as Twitch/CurseForge launcher) do not allow the Java version
+				# to be changed from Java 8.
+				# 
+				# Enable this option to ignore the MaxJavaVerWarning on launchers where the users
+				# are unable to change the version of Java used to launch the game.
+				ignoreMaxJavaVerWarningWhenVerForced = true
+				# 
+				# Whether or not to warn when someone tries to launch the modpack with a version
+				# of Java newer than that specified in warnMaxJavaVersion.
+				# 
+				# If this is enabled and someone does that, they'll get a message telling them how
+				# to downgrade with the option to ask later and continue launching the modpack.
+				# 
+				# Note: This is *separate* from enableMaxJavaVerRequirement - you can have a
+				# separate version requirement and warning.
+				enableMaxJavaVerWarning = false
 
 			[Java.Version.Max.Guide]
 				# 
@@ -175,64 +184,9 @@
 				# able to show an exact guide: %launcher, %reason, %type, %desire, %subject.
 				customJavaDowngradeGuideURL = "https://zlepper.github.io/itlt/guide?launcher=%launcher&reason=%reason&type=%type&desire=%desire&subject=%subject&debug=false"
 
-			[Java.Version.Max.Requirement]
-				# 
-				# Whether or not to require a certain version of Java to be able to launch the modpack.
-				# 
-				# If someone tries to launch the modpack with a version of Java newer than what's
-				# specified in requiredMaxJavaVersion, they'll get a message telling them how to
-				# downgrade and that the modpack will close until they relaunch it with older Java.
-				# 
-				# Note: If your version of Forge doesn't support the max version of Java you're
-				# trying to prevent, this mod won't be able to kick into action and show the message
-				# to users.
-				# 
-				# Note: This is *separate* from enableMaxJavaVerWarning - you can have a separate 
-				# version requirement and warning.
-				enableMaxJavaVerRequirement = false
-				# 
-				# The maximum version of Java needed to be able to launch the modpack.
-				# 
-				# Note: itlt handles Java version naming scheme differences for you, meaning you can
-				# put "7" here and itlt will correctly check against "Java 1.7" internally,
-				# while values such as "15" will check against "Java 15" internally.
-				#Range: 6 ~ 127
-				requiredMaxJavaVerion = 15
-
-			[Java.Version.Max.Warning]
-				# 
-				# Whether or not to warn when someone tries to launch the modpack with a version
-				# of Java newer than that specified in warnMaxJavaVersion.
-				# 
-				# If this is enabled and someone does that, they'll get a message telling them how
-				# to downgrade with the option to ask later and continue launching the modpack.
-				# 
-				# Note: This is *separate* from enableMaxJavaVerRequirement - you can have a
-				# separate version requirement and warning.
-				enableMaxJavaVerWarning = false
-				# 
-				# The minimum recommended version of Java needed to skip the warning message when
-				# launching the modpack.
-				#Range: 6 ~ 127
-				warnMaxJavaVersion = 15
-				# 
-				# Some launchers (such as Twitch/CurseForge launcher) do not allow the Java version
-				# to be changed from Java 8.
-				# 
-				# Enable this option to ignore the MaxJavaVerWarning on launchers where the users
-				# are unable to change the version of Java used to launch the game.
-				ignoreMaxJavaVerWarningWhenVerForced = true
-
 	[Java.Memory]
 
 		[Java.Memory.Guide]
-			# 
-			# Enable this if you want to be able to change the link your users are sent to when
-			# they ask for instructions on how to change their memory allocation settings.
-			# 
-			# This is mainly useful for when you're using an unsupported version of this mod and
-			# the default guide is outdated or you're using your own custom launcher.
-			enableCustomMemoryGuide = false
 			# 
 			# The URL of the guide you want users to visit when they want to change their memory
 			# allocation settings.
@@ -243,6 +197,13 @@
 			# Note: itlt supports the following *optional* string insertions, useful for being
 			# able to show an exact guide: %launcher, %reason, %type, %desire, %subject.
 			customMemoryAllocGuideURL = "https://zlepper.github.io/itlt/guide?launcher=%launcher&reason=%reason&type=%type&desire=%desire&subject=%subject&debug=false"
+			# 
+			# Enable this if you want to be able to change the link your users are sent to when
+			# they ask for instructions on how to change their memory allocation settings.
+			# 
+			# This is mainly useful for when you're using an unsupported version of this mod and
+			# the default guide is outdated or you're using your own custom launcher.
+			enableCustomMemoryGuide = false
 
 		[Java.Memory.Min]
 
@@ -285,15 +246,15 @@
 
 			[Java.Memory.Max.Requirement]
 				# 
+				#The maximum amount of allocated RAM in GB to be able to launch the modpack.
+				reqMaxMemoryAmountInGB = 16.0
+				# 
 				# Enable this to require that no more than X amount of RAM is available to the
 				# modpack for allocating.
 				# 
 				# This is useful for preventing users from allocating excessive amounts of RAM
 				# to the point of causing nasty GC-related lag spikes as a result.
 				enableMaxMemoryRequirement = true
-				# 
-				#The maximum amount of allocated RAM in GB to be able to launch the modpack.
-				reqMaxMemoryAmountInGB = 16.0
 
 			[Java.Memory.Max.Warning]
 				# 
@@ -325,12 +286,67 @@
 				#Range: 0.1 ~ 2.0
 				warnNearMaxMemoryWarningInGB = 1.0
 
+	[Java.Internal]
+		# 
+		# The version of itlt that created this config file. Intended to be used for migrating
+		# config changes when you update the mod. Please don't touch this, this is for itlt itself to change.
+		configVersion = "2.0.0"
+
+	[Java.Arch]
+
+		[Java.Arch.Requirement]
+			# 
+			# Whether or not to require 64bit Java to be able to launch the modpack.
+			# 
+			# If this is enabled and someone tries to launch the modpack with 32bit Java, they'll
+			# get a message telling them how to upgrade and the modpack will close until they
+			# relaunch it with 64bit Java.
+			# 
+			# Note: Enabling this overrides enable64bitWarning.
+			enable64bitRequirement = true
+
+		[Java.Arch.Warning]
+			# 
+			# Whether or not to warn when someone tries to launch the modpack with 32bit Java.
+			# 
+			# If this is enabled and someone tries to launch the modpack with 32bit Java, they'll
+			# get a message asking them to upgrade with instructions and the option to ask later
+			# and continue launching the modpack.
+			enable64bitWarning = true
+
+		[Java.Arch.Guide]
+			# 
+			# The URL of the guide you want users to visit when they want 64bit Java.
+			# 
+			# Note: enableCustom64bitJavaGuide must be enabled for this to take effect.
+			# Note: The URL must start with "https://" for security reasons.
+			# Note: itlt supports the following *optional* string insertions, useful for being
+			# able to show an exact guide: %launcher, %reason, %type, %desire, %subject.
+			custom64bitJavaGuideURL = "https://zlepper.github.io/itlt/guide?launcher=%launcher&reason=%reason&type=%type&desire=%desire&subject=%subject&debug=false"
+			# 
+			# Enable this if you want to be able to change the link your users are sent to when
+			# they ask for instructions on how to get 64bit Java.
+			# 
+			# This is mainly useful for when you're using an unsupported version of this mod and
+			# the default guide's outdated or you're using your own custom launcher.
+			enableCustom64bitJavaGuide = false
+
+	[Java.ServerList]
+		# 
+		# Enable this to have itlt add default servers to the Multiplayer list from a JSON file.
+		# 
+		# Note: The JSON needs to be placed in config\itlt\servers.json
+		# 
+		# Warning: This feature is experimental and may change in future v2.x releases. Check the
+		# changelog before updating if you use this. The changelog will make any breaking changes
+		# to this feature clear. If there's no mention of this feature in the changelog, rest assured
+		# you can update without needing to make any changes to your servers.json.
+		# 
+		enableCustomServerListEntries = false
+
 	[Java.Display]
 
 		[Java.Display.WindowTitle]
-			# 
-			# Enable this if you want to change the name of the Minecraft window.
-			enableCustomWindowTitle = true
 			# 
 			# The name you want your Minecraft window to be. Put "%mc" to include the original
 			# window title's contents to help identify the Minecraft version for example.
@@ -356,27 +372,23 @@
 			# Note: enableCustomWindowTitle must be enabled for this to take effect.
 			customWindowTitleText = "%autoName - %mc"
 			# 
-			# Whether or not to automatically replace "%autoName" in customWindowTitleText with
-			# your modpack's display name when launching from a supported launcher.
-			# 
-			# Note: enableCustomWindowTitle must be enabled for this to take effect.
-			enableUsingAutodetectedDisplayName = true
-			# 
 			# The text to use in place of %autoDetect if we're unable to automatically detect your
 			# modpack's display name.
 			# 
 			# Note: This value will always be used for %autoName if enableUsingAutodetectedDisplayName
 			# is disabled, regardless of whether or not the pack is launched from a supported launcher.
 			autoDetectedDisplayNameFallback = "ModpackName"
+			# 
+			# Whether or not to automatically replace "%autoName" in customWindowTitleText with
+			# your modpack's display name when launching from a supported launcher.
+			# 
+			# Note: enableCustomWindowTitle must be enabled for this to take effect.
+			enableUsingAutodetectedDisplayName = true
+			# 
+			# Enable this if you want to change the name of the Minecraft window.
+			enableCustomWindowTitle = true
 
 		[Java.Display.Icon]
-			# 
-			# Enable this if you want itlt to use its HiDPI-aware (aka Retina support) icon setting
-			# feature with the Vanilla game icon, obtained directly from the game's resources.
-			# 
-			# Turning this on should give you a more crisp and detailed icon on higher resolution displays,
-			# rather than the comparatively blurry 32px PNG that is normally used.
-			enableEnhancedVanillaIcon = true
 			# 
 			# Enable this if you want to change the window and taskbar icon of the Minecraft window.
 			# ICO, ICNS and PNG icons provided to this mod are supported on all operating systems.
@@ -388,29 +400,17 @@
 			# Note: This will override the enableEnhancedVanillaIcon when a valid custom icon is found.
 			enableCustomIcon = true
 			# 
+			# Enable this if you want itlt to use its HiDPI-aware (aka Retina support) icon setting
+			# feature with the Vanilla game icon, obtained directly from the game's resources.
+			# 
+			# Turning this on should give you a more crisp and detailed icon on higher resolution displays,
+			# rather than the comparatively blurry 32px PNG that is normally used.
+			enableEnhancedVanillaIcon = true
+			# 
 			# Enable this if you want itlt to automatically detect your modpack's icon when launching
 			# from a supported launcher. If unable to auto-detect, it will fallback to a provided
 			# icon.ico/icon.icns/icon.png file if available.
 			# 
 			# Note: enableCustomIcon must be enabled for this to take effect.
 			enableUsingAutodetectedIcon = true
-
-	[Java.ServerList]
-		# 
-		# Enable this to have itlt add default servers to the Multiplayer list from a JSON file.
-		# 
-		# Note: The JSON needs to be placed in config\itlt\servers.json
-		# 
-		# Warning: This feature is experimental and may change in future v2.x releases. Check the
-		# changelog before updating if you use this. The changelog will make any breaking changes
-		# to this feature clear. If there's no mention of this feature in the changelog, rest assured
-		# you can update without needing to make any changes to your servers.json.
-		# 
-		enableCustomServerListEntries = false
-
-	[Java.Internal]
-		# 
-		# The version of itlt that created this config file. Intended to be used for migrating
-		# config changes when you update the mod. Please don't touch this, this is for itlt itself to change.
-		configVersion = "2.0.0"
 
