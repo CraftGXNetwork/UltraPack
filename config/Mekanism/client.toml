@@ -2,9 +2,9 @@
 #Client Config. This config only exists on the client
 [client]
 	#Play sounds for Jetpack/Gas Mask/Flamethrower/Radiation (all players).
-	enablePlayerSounds = true
+	enablePlayerSounds = false
 	#If enabled machines play their sounds while running.
-	enableMachineSounds = true
+	enableMachineSounds = false
 	#Christmas/New Years greetings in chat.
 	holidays = true
 	#Adjust Mekanism sounds' base volume. < 1 is softer, higher is louder.
@@ -30,17 +30,17 @@
 	#Particle Config
 	[client.particle]
 		#Set to false to prevent particle spam when loading multiblocks (notification message will display instead).
-		enableMultiblockFormationParticles = true
+		enableMultiblockFormationParticles = false
 		#Show particles when machines active.
-		machineEffects = true
+		machineEffects = false
 		#How far (in blocks) from the player radiation particles can spawn.
 		radiationParticleRadius = 30
 		#How many particles spawn when rendering radiation effects (scaled by radiation level).
 		radiationParticleCount = 100
 		#Show bolts when the Magnetic Attraction Unit is pulling items.
-		magneticAttraction = true
+		magneticAttraction = false
 		#Show bolts for various AOE tool behaviors such as tilling, debarking, and vein mining.
-		toolAOE = true
+		toolAOE = false
 
 	#GUI Config
 	[client.gui]
