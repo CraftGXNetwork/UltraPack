@@ -1,0 +1,25 @@
+name: "release"
+on:
+  push:
+    branches:
+      - "main"
+jobs:
+  release:
+    name: "Release"
+    runs-on: "ubuntu-latest"
+    steps:
+    - uses: actions/checkout@master
+    - name: Archive Release
+      uses: thedoctor0/zip-release@main
+      with:
+        type: 'zip'
+        filename: 'UltraPack.zip'
+        exclusions: '*.git* /*node_modules/* .editorconfig README.md'
+    - name: Upload Release
+      uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "Technic"
+        prerelease: false
+        title: "UltraPack 1.16.5"
+        files: 'UltraPack.zip'
