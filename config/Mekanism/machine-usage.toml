@@ -16,7 +16,7 @@
 	#Energy per operation tick (Joules).
 	energizedSmelter = "50"
 	#Energy per operation tick (Joules).
-	digitalMiner = "100"
+	digitalMiner = "800"
 	#Energy per operation tick (Joules).
 	electricPump = "100"
 	#Energy that can be transferred at once per charge operation (Joules).

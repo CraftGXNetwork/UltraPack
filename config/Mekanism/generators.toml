@@ -2,7 +2,7 @@
 #Mekanism Generators Config. This config is synced between server and client.
 [generators]
 	#Amount of energy in Joules the Bio Generator produces per tick.
-	bioGeneration = "350"
+	bioGeneration = "150"
 	#Affects the Injection Rate, Max Temp, and Ignition Temp.
 	energyPerFusionFuel = "10000000"
 	#Peak output for the Solar Generator. Note: It can go higher than this value in some extreme environments.

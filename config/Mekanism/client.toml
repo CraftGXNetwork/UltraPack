@@ -32,7 +32,7 @@
 		#Set to false to prevent particle spam when loading multiblocks (notification message will display instead).
 		enableMultiblockFormationParticles = true
 		#Show particles when machines active.
-		machineEffects = true
+		machineEffects = false
 		#How far (in blocks) from the player radiation particles can spawn.
 		radiationParticleRadius = 30
 		#How many particles spawn when rendering radiation effects (scaled by radiation level).

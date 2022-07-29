@@ -40,7 +40,7 @@
 		#No comment
 		CertusQuartzWorldGen = true
 		#No comment
-		MeteoriteWorldGen = true
+		MeteoriteWorldGen = false
 		#No comment
 		SpawnPressesInMeteorites = true
 		#No comment
@@ -66,30 +66,30 @@
 	craftingCalculationTimePerTick = 5
 
 [spatialio]
-	spatialPowerMultiplier = 1250.0
-	spatialPowerExponent = 1.35
+	spatialPowerMultiplier = 12500
+	spatialPowerExponent = 135
 	#BE CAREFUL, CAN CORRUPT YOUR WORLD! Will use #spatial/whitelist as whitelist.
 	spatialBlockTags = false
 
 [GrindStone]
 	#Chance to actually get an output with stacksize > 1.
 	#Range: 0.0 ~ 100.0
-	oreDoublePercentage = 90.0
+	oreDoublePercentage = 95.0
 
 [battery]
-	wirelessTerminal = 1600000
-	chargedStaff = 8000
-	entropyManipulator = 200000
-	portableCell = 20000
-	colorApplicator = 20000
-	matterCannon = 200000
+	wirelessTerminal = 16000000
+	chargedStaff = 0
+	entropyManipulator = 0
+	portableCell = 0
+	colorApplicator = 0
+	matterCannon = 0
 
 [worldGen]
 	#Range: 0.0 ~ 1.0
-	spawnChargedChance = 0.08
+	spawnChargedChance = 0.8
 	meteoriteBiomeBlacklist = []
-	quartzOresPerCluster = 4
-	quartzOresClusterAmount = 20
+	quartzOresPerCluster = 10
+	quartzOresClusterAmount = 30
 	quartzOresBiomeBlacklist = []
 
 [wireless]
