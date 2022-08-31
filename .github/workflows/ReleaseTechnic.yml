@@ -14,7 +14,7 @@ jobs:
       with:
         type: 'zip'
         filename: 'UltraPack.zip'
-        exclusions: '*.git* /*node_modules/* .editorconfig README.md'
+        exclusions: '*.git* .editorconfig README.md CODE_OF_CONDUCT.md LICENSE TLauncherAdditional.json UltraPack.jar UltraPack.json'
     - name: Upload Release
       uses: "marvinpinto/action-automatic-releases@latest"
       with:
