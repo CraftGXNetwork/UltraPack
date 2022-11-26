@@ -40,7 +40,7 @@
 		#No comment
 		CertusQuartzWorldGen = true
 		#No comment
-		MeteoriteWorldGen = false
+		MeteoriteWorldGen = true
 		#No comment
 		SpawnPressesInMeteorites = true
 		#No comment
@@ -56,7 +56,7 @@
 
 [general]
 	#Will auto-remove items that crash when being loaded from storage. This will destroy those items instead of crashing the game!
-	removeCrashingItemsOnLoad = false
+	removeCrashingItemsOnLoad = true
 
 [automation]
 	#TODO
@@ -88,8 +88,8 @@
 	#Range: 0.0 ~ 1.0
 	spawnChargedChance = 0.8
 	meteoriteBiomeBlacklist = []
-	quartzOresPerCluster = 10
-	quartzOresClusterAmount = 30
+	quartzOresPerCluster = 15
+	quartzOresClusterAmount = 35
 	quartzOresBiomeBlacklist = []
 
 [wireless]
