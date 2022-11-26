@@ -203,25 +203,25 @@
 			basicPullAmount = 1
 			#Five times travel speed of Basic logistical transporter.
 			#Range: > 1
-			basicSpeed = 5
+			basicSpeed = 2
 			#Item throughput rate of Advanced logistical transporters in items/half second.
 			#Range: > 1
 			advancedPullAmount = 16
 			#Five times travel speed of Advanced logistical transporter.
 			#Range: > 1
-			advancedSpeed = 10
+			advancedSpeed = 5
 			#Item throughput rate of Elite logistical transporters in items/half second.
 			#Range: > 1
 			elitePullAmount = 32
 			#Five times travel speed of Elite logistical transporter.
 			#Range: > 1
-			eliteSpeed = 20
+			eliteSpeed = 10
 			#Item throughput rate of Ultimate logistical transporters in items/half second.
 			#Range: > 1
 			ultimatePullAmount = 64
 			#Five times travel speed of Ultimate logistical transporter.
 			#Range: > 1
-			ultimateSpeed = 50
+			ultimateSpeed = 25
 
 		#Thermodynamic Conductors
 		[tier.transmitters.heat]
