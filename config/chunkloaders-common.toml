@@ -3,13 +3,17 @@
     # Allowed range: -1 ~ 1000 - Default: -1
     maxLoadedChunksPerPlayer = -1
 
+    # Can players use the chunk loader map? If false, players will see the message 'The chunk loader map is disabled on this server'.
+    # Allowed values: true, false - Default: true
+    canPlayersUseMap = false
+
     # After how many minutes of offline time should players' chunk loaders be disabled? Use -1 to disable the inactivity timeout.
     # Allowed range: -1 ~ 525600 - Default: 10080
-    inactivityTimeout = 4320
+    inactivityTimeout = 1440
 
     # Chunk loaders from before version 1.2.0 are not bound to a player. Should these chunk loaders' loaded chunks stay loaded?
     # Allowed values: true, false - Default: true
-    allowLegacyLoadedChunks = true
+    allowLegacyLoadedChunks = false
 
 [General]
     # In what radius should the Single Chunk Loader be able to load chunks?
