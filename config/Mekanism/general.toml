@@ -72,22 +72,22 @@
 		#Disables IC2 power integration. Requires world restart (server-side option in SMP).
 		blacklistIC2 = false
 		#Conversion multiplier from EU to Joules (EU * JoulePerEU = Joules)
-		JoulePerEU = "10"
+		JoulePerEU = "1"
 		#Conversion multiplier from Joules to EU (Joules * EUPerJoule = EU)
-		EUPerJoule = "0.1000"
+		EUPerJoule = "1"
 		#Disables Forge Energy (FE,RF,IF,uF,CF) power integration. Requires world restart (server-side option in SMP).
 		blacklistForge = false
 		#Conversion multiplier from Forge Energy to Joules (FE * JoulePerForgeEnergy = Joules)
-		JoulePerForgeEnergy = "2.5000"
+		JoulePerForgeEnergy = "1"
 		#Conversion multiplier from Joules to Forge Energy (Joules * ForgeEnergyPerJoule = FE)
-		ForgeEnergyPerJoule = "0.4000"
+		ForgeEnergyPerJoule = "1"
 		#Disables Flux Networks higher throughput Forge Energy (FE,RF,IF,uF,CF) power integration. Requires world restart (server-side option in SMP). Note: Disabling Forge Energy integration also disables this.
 		blacklistFluxNetworks = false
 		#How much energy is produced per mB of Hydrogen, also affects Electrolytic Separator usage, Ethylene burn rate and Gas generator energy capacity.
 		HydrogenEnergyDensity = "200"
 		#Burn time for Ethylene (1mB hydrogen + 2*bioFuel/tick*200ticks/100mB * 20x efficiency bonus).
 		#Range: > 1
-		EthyleneBurnTime = 40
+		EthyleneBurnTime = 20
 		#Maximum Joules per mB of Steam. Also affects Thermoelectric Boiler.
 		maxEnergyPerSteam = "10"
 		#Displayed energy type in Mekanism GUIs.
@@ -100,7 +100,7 @@
 		radiationEnabled = false
 		#The radius of chunks checked when running radiation calculations. The algorithm is efficient, but don't abuse it by making this crazy high.
 		#Range: 1 ~ 100
-		chunkCheckRadius = 5
+		chunkCheckRadius = 1
 		#Radiation sources are multiplied by this constant roughly once per second to represent their emission decay. At the default rate, it takes roughly 10 hours to remove a 1,000 Sv/h (crazy high) source.
 		sourceDecayRate = 0.9995
 		#Radiated objects and entities are multiplied by this constant roughly once per second to represent their dosage decay.
@@ -124,10 +124,10 @@
 		silkMultiplier = 8
 		#Maximum radius in blocks that the Digital Miner can reach. (Increasing this may have negative effects on stability and/or performance. We strongly recommend you leave it at the default value).
 		#Range: > 1
-		maxRadius = 16
+		maxRadius = 32
 		#Number of ticks required to mine a single block with a Digital Miner (without any upgrades).
 		#Range: > 1
-		ticksPerMine = 120
+		ticksPerMine = 160
 
 	#Laser Settings
 	[general.laser]
@@ -170,7 +170,7 @@
 		#Enable the security system for players to prevent others from accessing their machines. Does NOT affect Frequencies.
 		allowProtection = true
 		#Ops can bypass the block security restrictions if enabled.
-		opsBypassRestrictions = false
+		opsBypassRestrictions = true
 
 	#Nutritional Paste Settings
 	[general.nutritional_paste]
@@ -182,13 +182,13 @@
 	#Thermal Evaporation Plant Settings
 	[general.thermal_evaporation]
 		#Thermal Evaporation Tower heat loss per tick.
-		heatDissipation = 0.02
+		heatDissipation = 0.01
 		#Temperature to amount produced ratio for Thermal Evaporation Tower.
-		tempMultiplier = 0.4
+		tempMultiplier = 0.6
 		#Heat to absorb per Solar Panel array of Thermal Evaporation Tower.
 		solarMultiplier = 0.2
 		#Heat capacity of Thermal Evaporation Tower layers (increases amount of energy needed to increase temperature).
-		heatCapacity = 100.0
+		heatCapacity = 250.0
 
 	#SPS Settings
 	[general.sps]
