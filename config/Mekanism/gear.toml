@@ -25,10 +25,10 @@
 		energyUsageSprintBoost = "100"
 		#Maximum amount of Hydrogen storable in the jetpack unit.
 		#Range: 1 ~ 9223372036854775807
-		jetpackMaxStorage = 48000
+		jetpackMaxStorage = 84000
 		#Rate at which Hydrogen can be transferred into the jetpack unit.
 		#Range: 1 ~ 9223372036854775807
-		jetpackTransferRate = 256
+		jetpackTransferRate = 128
 		#Energy usage (Joules) per second of the MekaSuit when flying with the Elytra Unit.
 		elytraEnergyUsage = "32000"
 		#Energy usage (Joules) of MekaSuit when lessening a potion effect.
@@ -153,11 +153,11 @@
 		#Enable the 'Vein Mining' mode for the Atomic Disassembler.
 		veinMining = false
 		#The amount of damage the Atomic Disassembler does when it has at least energyUsageWeapon power stored. (Value is in number of half hearts)
-		maxDamage = 10
+		maxDamage = 5
 		#The max Atomic Disassembler Vein Mining Block Count.
-		miningCount = 128
+		miningCount = 16
 		#The amount of damage the Atomic Disassembler does when it is out of power. (Value is in number of half hearts)
-		minDamage = 8
+		minDamage = 3
 
 	#Energy Tablet Settings
 	[gear.energy_tablet]
@@ -215,7 +215,7 @@
 		fillRate = 16
 		#Jetpack Gas Tank capacity in mB.
 		#Range: 1 ~ 9223372036854775807
-		maxGas = 24000
+		maxGas = 42000
 
 		#Armored Jetpack Settings
 		[gear.jetpack.armored]
